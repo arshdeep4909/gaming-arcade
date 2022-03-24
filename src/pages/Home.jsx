@@ -66,8 +66,6 @@ const GameList = styled(motion.div)`
   padding: 0 5rem;
   h2 {
     padding: 5rem 0;
-    font-size: 2rem;
-    font-family: sans-serif;
   }
 `;
 
