@@ -11,12 +11,20 @@ const gamesReducer = (state = initialState, action) => {
       return {
         ...state,
         popular: action.payload.popular,
-        upcomingGames: action.payload.upcomingGames,
-        newGames: action.payload.newGames,
       };
     default:
       return { ...state };
   }
 };
+
+//ACTION CREATOR
+
+const fetchgames = (userData) => {
+  return {
+    type: "FETCH_GAMES",
+    payload: userData,
+  };
+};
+fetchgames();
 
 export default gamesReducer;
