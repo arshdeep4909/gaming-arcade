@@ -13,33 +13,33 @@ const GameDetail = () => {
   return (
     <CardShadow>
       <Detail>
-        <div className="stats">
-          <div className="rating">
+        <Stats>
+          <Rating>
             <h3>{game.name} </h3>
             <p>Rating: {game.rating} </p>
-          </div>
-          <div className="info">
+          </Rating>
+          <Info className="info">
             <h3>Platforms </h3>
-            <div className="platform">
+            <Platforms>
               {/* using conditional mapping here (? means that only render when platforms is available ) */}
               {game.platforms?.map((data) => (
                 <h3 key={data.platform.id}> {data.platform.name} </h3>
               ))}{" "}
-            </div>
-          </div>
-        </div>
-        <div className="media">
+            </Platforms>
+          </Info>
+        </Stats>
+        <Media>
           <img src={game.background_image} alt="" />
-        </div>
-        <div className="description">
+        </Media>
+        <Description>
           <p> {game.description_raw}</p>
-        </div>
+        </Description>
 
-        <div className="gallery">
+        <Gallery>
           {screen.map((images) => (
             <img src={images.image} key={images.id} alt="game screenshots" />
           ))}
-        </div>
+        </Gallery>
       </Detail>
     </CardShadow>
   );
@@ -74,6 +74,51 @@ const Detail = styled(motion.div)`
   color: black;
   img {
     width: 100%;
+  }
+`;
+
+const Stats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Info = styled(motion.div)`
+  text-align: center;
+  /* width: 100%; */
+`;
+
+const Rating = styled(motion.div)`
+  text-align: center;
+  h3 {
+    padding: 0 0 2rem;
+  }
+`;
+
+const Platforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    /* will be replacing text with icons */
+    margin-left: 3rem;
+  }
+`;
+
+const Media = styled(motion.div)`
+  margin-top: 5rem;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+const Description = styled(motion.div)`
+  margin: 2rem;
+`;
+
+const Gallery = styled(motion.div)`
+  img {
+    // to remove the space between game screenshots
+    display: block;
   }
 `;
 
