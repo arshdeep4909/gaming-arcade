@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Redux
 import { useSelector } from "react-redux";
-import { createStore } from "redux";
 
 const GameDetail = () => {
   //Data
@@ -89,7 +88,6 @@ const Info = styled(motion.div)`
 `;
 
 const Rating = styled(motion.div)`
-  text-align: center;
   h3 {
     padding: 0 0 2rem;
   }
@@ -121,5 +119,7 @@ const Gallery = styled(motion.div)`
     display: block;
   }
 `;
+
+//
 
 export default GameDetail;

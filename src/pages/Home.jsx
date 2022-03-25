@@ -8,8 +8,16 @@ import GameDetail from "../components/GameDetail";
 //Styling
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  //get the current location
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
+  //this return us an array but when we are on our home our location is '/'
+  //which means that pathId will be undefined but we will still render our Home component
+  //because that how we set up our routes in our App.js
+  // we can use this to render our our GameDetail
   //Fetch games
   const disaptch = useDispatch();
   useEffect(() => {
@@ -20,7 +28,8 @@ const Home = () => {
 
   return (
     <GameList>
-      <GameDetail />
+      {/* render our <GameDetail/> only if we have our pathId available */}
+      {pathId && <GameDetail />}
       <h2>Popular Games</h2>
       <Games>
         {popular.map((game) => (
