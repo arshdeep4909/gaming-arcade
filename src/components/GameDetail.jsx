@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Redux
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const GameDetail = () => {
   //Data
@@ -12,6 +13,9 @@ const GameDetail = () => {
   return (
     <CardShadow>
       <Detail>
+        <Link to={"/"}>
+          <HomeBtn>X</HomeBtn>
+        </Link>
         <Stats>
           <Rating>
             <h3>{game.name} </h3>
@@ -63,10 +67,26 @@ const CardShadow = styled(motion.div)`
   }
 `;
 
+const HomeBtn = styled(motion.div)`
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  left: 90%;
+  border: 2px solid gray;
+  padding: 3px 8px;
+  top: 50px;
+  border-radius: 10px;
+  :hover {
+    background: #535353;
+    color: white;
+  }
+`;
+
 const Detail = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 6rem 20rem 2rem 20rem;
   background-color: white;
   position: absolute;
   left: 10%;
