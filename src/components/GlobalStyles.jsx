@@ -8,11 +8,14 @@ const GlobalStyles = createGlobalStyle`
 }
 html{
     &::-webkit-scrollbar{
-        width: 0.5rem;
+        width: 0.7rem;
     }
     &::-webkit-scrollbar-thumb{
         background-color: darkgray;
     }
+    &::-webkit-scrollbar-track {
+    background: white;
+  }
     body{
         font-family: 'Montserrat', sans-serif;
         width: 100%;

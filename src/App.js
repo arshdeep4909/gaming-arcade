@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Home from "./pages/Home";
 import GlobalStyles from "./components/GlobalStyles";
+import GameDetail from "./components/GameDetail";
 
 function App() {
   return (
