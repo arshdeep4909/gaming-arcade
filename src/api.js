@@ -48,12 +48,12 @@ export const newGamesURL = () => `${base_URL}${newGames}`;
 
 //game details
 export const gameDetailsURL = (game_id) => {
-  return `${base_URL}games/${game_id}&key=${process.env.REACT_APP_API_KEY}`;
+  return `${base_URL}games/${game_id}?&key=${process.env.REACT_APP_API_KEY}`;
 };
 
 //game screenShots
 export const gameScreenshotURL = (game_id) => {
-  return `${base_URL}games/${game_id}/screenshots&key=${process.env.REACT_APP_API_KEY}`;
+  return `${base_URL}games/${game_id}/screenshots?&key=${process.env.REACT_APP_API_KEY}`;
 };
 
 //Searched Game
