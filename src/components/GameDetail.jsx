@@ -5,8 +5,22 @@ import { motion } from "framer-motion";
 //Redux
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const GameDetail = () => {
+  //navigate to manipulate or router dom
+  const navigate = useNavigate();
+  //Exit Detail
+  const exitDetailHandler = (e) => {
+    const element = e.target;
+    //this returns the element that we click on
+    if (element.classList.contains("shadow")) {
+      document.body.style.overflow = "auto";
+      navigate("/");
+      //so if we click back on the area between our gameDetail and game, the transparent
+      //background portion then it takes us back to game component
+    }
+  };
   //Data
   const { game, screen, isLoading } = useSelector((state) => state.detail);
 
@@ -15,10 +29,12 @@ const GameDetail = () => {
       {/* we only fetch our Game detail when is Loading is False, be default 
       it is true and it is not set to flase untill our gameDetail is done fteching */}
       {!isLoading && (
-        <CardShadow>
+        <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail>
             <Link to={"/"}>
-              <HomeBtn>X</HomeBtn>
+              <HomeBtn className="shadow" onClick={exitDetailHandler}>
+                X
+              </HomeBtn>
             </Link>
             <Stats>
               <Rating>

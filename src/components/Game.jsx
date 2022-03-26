@@ -10,7 +10,11 @@ import { Link } from "react-router-dom";
 
 const Game = ({ name, id, image, released, platform }) => {
   const dispatch = useDispatch();
+  //Event Handlers
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
+    //we do this in order to avoid scrolling the Home component when our gameDetail is open
+    //but we have to set it back to auto once we are back to our Game
     dispatch(loadDetail(id));
   };
   return (
