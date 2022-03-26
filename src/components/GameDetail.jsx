@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { smallImage } from "../util";
 
 const GameDetail = () => {
   //navigate to manipulate or router dom
@@ -52,7 +53,7 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt="" />
+              <img src={smallImage(game.background_image, 640)} alt="" />
             </Media>
             <Description>
               <p> {game.description_raw}</p>
@@ -61,7 +62,7 @@ const GameDetail = () => {
             <Gallery>
               {screen.map((images) => (
                 <img
-                  src={images.image}
+                  src={smallImage(images.image, 640)}
                   key={images.id}
                   alt="game screenshots"
                 />

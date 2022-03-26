@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 //components
 import loadDetail from "../actions/detailAction";
 import { Link } from "react-router-dom";
+import { smallImage } from "../util";
 
 const Game = ({ name, id, image, released, platform }) => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const Game = ({ name, id, image, released, platform }) => {
       <Link to={`/game/${id}`}>
         <h3>{name} </h3>
         <p> {released} </p>
-        <img src={image} alt="" />
+        <img src={smallImage(image, 640)} alt="" />
       </Link>
     </StyledGame>
   );
@@ -36,6 +37,7 @@ const StyledGame = styled(motion.div)`
   text-align: center;
   border-radius: 1rem;
   overflow: hidden;
+  margin-bottom: 5rem;
   cursor: pointer;
   img {
     width: 100%;
