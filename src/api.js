@@ -58,5 +58,5 @@ export const gameScreenshotURL = (game_id) => {
 
 //Searched Game
 export const searchGameURl = (game_name) => {
-  return `${base_URL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}`;
+  return `${base_URL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}&page_size=6`;
 };

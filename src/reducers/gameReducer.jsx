@@ -1,3 +1,5 @@
+import { act } from "react-dom/test-utils";
+
 const initialState = {
   popular: [],
   upcoming: [],
@@ -13,6 +15,16 @@ const gamesReducer = (state = initialState, action) => {
         popular: action.payload.popular,
         upcoming: action.payload.upcoming,
         newGames: action.payload.newGames,
+      };
+    case "FETCH_SEARCHED":
+      return {
+        ...state,
+        searched: action.payload.search,
+      };
+    case "CLEAR_SEARCH":
+      return {
+        ...state,
+        searched: [],
       };
     default:
       return { ...state };

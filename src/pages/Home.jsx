@@ -24,12 +24,31 @@ const Home = () => {
     disaptch(loadGames());
   }, [disaptch]);
   //getting the data
-  const { popular, upcoming, newGames } = useSelector((state) => state.games);
+  const { popular, upcoming, newGames, searched } = useSelector(
+    (state) => state.games
+  );
 
   return (
     <GameList>
       {/* render our <GameDetail/> only if we have our pathId available */}
       {pathId && <GameDetail />}
+      {searched.length != 0 && (
+        <div>
+          <h2>Searched Games</h2>
+          <Games>
+            {searched.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                platform={game.platform}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </Games>
+        </div>
+      )}
       <h2>Popular Games</h2>
       <Games>
         {popular.map((game) => (
