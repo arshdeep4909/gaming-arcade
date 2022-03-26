@@ -8,43 +8,53 @@ import { Link } from "react-router-dom";
 
 const GameDetail = () => {
   //Data
-  const { game, screen } = useSelector((state) => state.detail);
+  const { game, screen, isLoading } = useSelector((state) => state.detail);
 
   return (
-    <CardShadow>
-      <Detail>
-        <Link to={"/"}>
-          <HomeBtn>X</HomeBtn>
-        </Link>
-        <Stats>
-          <Rating>
-            <h3>{game.name} </h3>
-            <p>Rating: {game.rating} </p>
-          </Rating>
-          <Info className="info">
-            <h3>Platforms </h3>
-            <Platforms>
-              {/* using conditional mapping here (? means that only render when platforms is available ) */}
-              {game.platforms?.map((data) => (
-                <h3 key={data.platform.id}> {data.platform.name} </h3>
-              ))}{" "}
-            </Platforms>
-          </Info>
-        </Stats>
-        <Media>
-          <img src={game.background_image} alt="" />
-        </Media>
-        <Description>
-          <p> {game.description_raw}</p>
-        </Description>
+    <>
+      {/* we only fetch our Game detail when is Loading is False, be default 
+      it is true and it is not set to flase untill our gameDetail is done fteching */}
+      {!isLoading && (
+        <CardShadow>
+          <Detail>
+            <Link to={"/"}>
+              <HomeBtn>X</HomeBtn>
+            </Link>
+            <Stats>
+              <Rating>
+                <h3>{game.name} </h3>
+                <p>Rating: {game.rating} </p>
+              </Rating>
+              <Info className="info">
+                <h3>Platforms </h3>
+                <Platforms>
+                  {/* using conditional mapping here (? means that only render when platforms is available ) */}
+                  {game.platforms?.map((data) => (
+                    <h3 key={data.platform.id}> {data.platform.name} </h3>
+                  ))}{" "}
+                </Platforms>
+              </Info>
+            </Stats>
+            <Media>
+              <img src={game.background_image} alt="" />
+            </Media>
+            <Description>
+              <p> {game.description_raw}</p>
+            </Description>
 
-        <Gallery>
-          {screen.map((images) => (
-            <img src={images.image} key={images.id} alt="game screenshots" />
-          ))}
-        </Gallery>
-      </Detail>
-    </CardShadow>
+            <Gallery>
+              {screen.map((images) => (
+                <img
+                  src={images.image}
+                  key={images.id}
+                  alt="game screenshots"
+                />
+              ))}
+            </Gallery>
+          </Detail>
+        </CardShadow>
+      )}
+    </>
   );
 };
 
