@@ -32,7 +32,7 @@ const Home = () => {
     <GameList>
       {/* render our <GameDetail/> only if we have our pathId available */}
       {pathId && <GameDetail />}
-      {searched.length != 0 && (
+      {searched.length !== 0 && (
         <div>
           <h2>Searched Games</h2>
           <Games>

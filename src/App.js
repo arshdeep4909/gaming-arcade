@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Home from "./pages/Home";
 import GlobalStyles from "./components/GlobalStyles";
-import GameDetail from "./components/GameDetail";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 
