@@ -38,9 +38,9 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 //Popular Games
-const popularGames = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
-const upcomingGames = `games?key=${process.env.REACT_APP_API_KEY}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
-const newGames = `games?key=${process.env.REACT_APP_API_KEY}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
+const popularGames = `games?key=431ee043f78b4a918a6ea08d99f0633a&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcomingGames = `games?key=431ee043f78b4a918a6ea08d99f0633a&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
+const newGames = `games?key=431ee043f78b4a918a6ea08d99f0633a&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
 //getting the completed URL
 export const popularGamesURL = () => `${base_URL}${popularGames}`;
@@ -49,15 +49,15 @@ export const newGamesURL = () => `${base_URL}${newGames}`;
 
 //game details
 export const gameDetailsURL = (game_id) => {
-    return `${base_URL}games/${game_id}?&key=${process.env.REACT_APP_API_KEY}`;
+    return `${base_URL}games/${game_id}?&key=431ee043f78b4a918a6ea08d99f0633a`;
 };
 
 //game screenShots
 export const gameScreenshotURL = (game_id) => {
-    return `${base_URL}games/${game_id}/screenshots?&key=${process.env.REACT_APP_API_KEY}`;
+    return `${base_URL}games/${game_id}/screenshots?&key=431ee043f78b4a918a6ea08d99f0633a`;
 };
 
 //Searched Game
 export const searchGameURl = (game_name) => {
-    return `${base_URL}games?search=${game_name}&key=${process.env.REACT_APP_API_KEY}&page_size=6`;
+    return `${base_URL}games?search=${game_name}&key=431ee043f78b4a918a6ea08d99f0633a&page_size=6`;
 };
