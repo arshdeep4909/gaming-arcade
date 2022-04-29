@@ -1,4 +1,5 @@
-require("dotenv").config();
+// require("dotenv").config();
+// REACT_APP_API_KEY=431ee043f78b4a918a6ea08d99f0633a
 
 //base URL
 const base_URL = `/api/`;
