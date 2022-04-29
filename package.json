@@ -2,7 +2,7 @@
     "name": "gaming-arcade",
     "version": "0.1.0",
     "private": true,
-    "proxy": "https://api.rawg.io",
+    "proxy": "",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.2",
         "@testing-library/react": "^12.1.4",

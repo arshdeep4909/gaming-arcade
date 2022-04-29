@@ -2,7 +2,7 @@
 // REACT_APP_API_KEY=431ee043f78b4a918a6ea08d99f0633a
 
 //base URL
-const base_URL = `/api/`;
+const base_URL = `https://api.rawg.io/api/`;
 
 //Getting date and times
 const date = new Date();
